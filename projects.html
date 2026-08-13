@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Case Studies | AVENZOTECH</title>
+<meta name="description" content="Case studies from AVENZOTECH: edge AI security systems, enterprise web platforms, cross-platform mobile apps and analytics tooling." />
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#09090a" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="fx" aria-hidden="true">
+  <div class="fx__orb fx__orb--a"></div>
+  <div class="fx__orb fx__orb--b"></div>
+  <div class="fx__grid"></div>
+  <canvas class="fx__dots"></canvas>
+  <div class="fx__scan"></div>
+</div>
+
+<div class="spine" aria-hidden="true"><div class="spine__fill"></div></div>
+<div class="spine__tag" aria-hidden="true">Projects</div>
+
+<header class="nav">
+  <div class="shell nav__in">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="logo.svg" alt="" width="120" height="120" />
+      <span class="brand__mark">Avenzo<span>tech</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="nav__cta" href="contact.html">Start a project</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" data-section="Projects">
+  <div class="shell">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow"><b>04</b> — Projects</p>
+        <h1>The build, the constraint, the <em>outcome</em>.</h1>
+        <p class="lede">Every case study below states what the system had to survive — bad connectivity, messy data, non-technical users — because that is what actually shapes an architecture.</p>
+      </div>
+      <dl class="facts" data-reveal>
+        <div><dt>Sectors</dt><dd>Residential security, enterprise ops, analytics</dd></div>
+        <div><dt>Typical timeline</dt><dd>6–16 weeks</dd></div>
+        <div><dt>Handover</dt><dd>Source, pipelines, documentation</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="band band--flush" id="security-hub" data-section="Smart Security Hub">
+  <div class="shell">
+    <div class="head" data-reveal>
+      <div>
+        <p class="eyebrow"><b>Case 01</b> — Security &amp; AI</p>
+        <h2>Smart Security Hub</h2>
+      </div>
+      <p class="lede">AI-based society security: vehicle detection, face recognition and a tamper-evident entry–exit log, running on edge hardware at the gate.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card" data-reveal>
+        <h4 class="mono">The constraint</h4>
+        <p>Gate hardware sits on unreliable connectivity and guards are not technical. The system had to keep working with the internet down and stay usable on a single touchscreen.</p>
+      </article>
+      <article class="card" data-reveal data-delay="90">
+        <h4 class="mono">What we built</h4>
+        <p>On-device inference for plate and face recognition, a local queue that syncs logs when the link returns, and a guard console reduced to three actions.</p>
+        <ul><li>Python · OpenCV</li><li>Local queue + sync</li><li>Role-based console</li></ul>
+      </article>
+      <article class="card" data-reveal data-delay="180">
+        <h4 class="mono">Result</h4>
+        <p class="mono" style="color:var(--ash-dim)">Replace this block with the real figure once measured — entries logged per day, manual register time removed, or incident lookup time.</p>
+        <p class="metric">—<small>Add your metric</small></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="band band--panel" id="enterprise-platform" data-section="Enterprise Platform">
+  <div class="shell">
+    <div class="head" data-reveal>
+      <div>
+        <p class="eyebrow"><b>Case 02</b> — Web &amp; Data</p>
+        <h2>Enterprise Web Platform</h2>
+      </div>
+      <p class="lede">A business management platform: role-scoped dashboards, operational reporting and exports, built to stay fast on ordinary office machines.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card" data-reveal>
+        <h4 class="mono">The constraint</h4>
+        <p>Large tables, many concurrent users, and staff on older browsers. Client-side rendering alone would have made every report load feel broken.</p>
+      </article>
+      <article class="card" data-reveal data-delay="90">
+        <h4 class="mono">What we built</h4>
+        <p>Next.js with server-side rendering and streamed tables, PostgreSQL with indexed reporting views, and permissions enforced at the query layer rather than the UI.</p>
+        <ul><li>Next.js · PostgreSQL</li><li>Server-rendered reports</li><li>Query-level RBAC</li></ul>
+      </article>
+      <article class="card" data-reveal data-delay="180">
+        <h4 class="mono">Result</h4>
+        <p class="mono" style="color:var(--ash-dim)">Add the measured improvement here — report load time before and after, or hours of manual consolidation removed each month.</p>
+        <p class="metric">—<small>Add your metric</small></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="band" id="mobile-app" data-section="Mobile Application">
+  <div class="shell">
+    <div class="head" data-reveal>
+      <div>
+        <p class="eyebrow"><b>Case 03</b> — Mobile</p>
+        <h2>Mobile Application</h2>
+      </div>
+      <p class="lede">A cross-platform app with authentication, offline-first cloud sync and a component-driven interface shipped to both stores from one codebase.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card" data-reveal>
+        <h4 class="mono">The constraint</h4>
+        <p>Users work in places with patchy mobile data and expect the app to open instantly and never lose an entry.</p>
+      </article>
+      <article class="card" data-reveal data-delay="90">
+        <h4 class="mono">What we built</h4>
+        <p>A local-first data layer with a sync engine and conflict resolution, biometric login, push notifications, and automated store builds through CI.</p>
+        <ul><li>Cross-platform codebase</li><li>Offline-first sync</li><li>Automated releases</li></ul>
+      </article>
+      <article class="card" data-reveal data-delay="180">
+        <h4 class="mono">Result</h4>
+        <p class="mono" style="color:var(--ash-dim)">Add adoption or reliability numbers here — installs, crash-free sessions, or sync failures eliminated.</p>
+        <p class="metric">—<small>Add your metric</small></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="band band--panel" id="ai-analytics" data-section="AI Analytics">
+  <div class="shell">
+    <div class="head" data-reveal>
+      <div>
+        <p class="eyebrow"><b>Case 04</b> — AI &amp; Automation</p>
+        <h2>AI Analytics Tool</h2>
+      </div>
+      <p class="lede">An analytics layer that ingests inconsistent operational exports and returns trends, outliers and plain-language summaries for non-technical managers.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card" data-reveal>
+        <h4 class="mono">The constraint</h4>
+        <p>Source files arrive in different shapes every month, and the people who need the answers do not write queries.</p>
+      </article>
+      <article class="card" data-reveal data-delay="90">
+        <h4 class="mono">What we built</h4>
+        <p>A Python ingestion pipeline that normalises and validates each file, statistical outlier detection, and LLM-generated summaries grounded strictly in the computed numbers.</p>
+        <ul><li>Python pipeline</li><li>Outlier detection</li><li>Grounded LLM summaries</li></ul>
+      </article>
+      <article class="card" data-reveal data-delay="180">
+        <h4 class="mono">Result</h4>
+        <p class="mono" style="color:var(--ash-dim)">Add the time saved per reporting cycle, or the number of reports now generated without analyst involvement.</p>
+        <p class="metric">—<small>Add your metric</small></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta" data-section="Contact">
+  <div class="shell">
+    <p class="eyebrow">Next step</p>
+    <h2>Your project could be case 05.</h2>
+    <p class="lede">Bring the constraint you think is unsolvable. Those are the briefs we want.</p>
+    <div class="btns" style="margin-top:30px">
+      <a class="btn btn--solid" href="contact.html">Start a project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="services.html">See services</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:18px">
+      <img class="brand__logo" src="logo.svg" alt="" width="120" height="120" />
+      <span class="brand__mark">Avenzo<span>tech</span></span>
+    </a>
+        <p style="max-width:38ch">Building secure, scalable and future-ready digital solutions with innovation and precision.</p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:sales@avenzotech.com">sales@avenzotech.com</a><br><a href="tel:+919328306142">+91 93283 06142</a><br>Vapi, Gujarat, India</p>
+        <p style="margin-top:10px"><a href="#" data-consent-open>Privacy preferences</a></p>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>© <span data-year></span> AVENZOTECH. All rights reserved.</span>
+      <span>WCAG 2.2 AA · Privacy-first</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Privacy controls — granular, opt-in, stored locally only -->
+<aside class="consent" role="dialog" aria-label="Privacy preferences" aria-live="polite">
+  <h4>Privacy preferences</h4>
+  <p>This site sets nothing beyond what it needs to work. Choose what else you allow — your decision is stored in your own browser and never sent to us.</p>
+  <div class="consent__rows">
+    <div class="consent__row">
+      <span>Strictly necessary<small>Page delivery and your saved preference. Cannot be switched off.</small></span>
+      <label class="switch"><input type="checkbox" checked disabled aria-label="Strictly necessary — always on" /><i></i></label>
+    </div>
+    <div class="consent__row">
+      <span>Analytics<small>Anonymous page and performance data, so we can fix what is slow.</small></span>
+      <label class="switch"><input type="checkbox" id="c-analytics" aria-label="Allow analytics" /><i></i></label>
+    </div>
+    <div class="consent__row">
+      <span>Marketing<small>Attribution for campaigns. Off unless you turn it on.</small></span>
+      <label class="switch"><input type="checkbox" id="c-marketing" aria-label="Allow marketing" /><i></i></label>
+    </div>
+  </div>
+  <div class="consent__btns">
+    <button class="btn btn--solid" type="button" data-consent-accept>Allow all</button>
+    <button class="btn btn--ghost" type="button" data-consent-save>Save choices</button>
+    <button class="btn btn--ghost" type="button" data-consent-reject>Necessary only</button>
+  </div>
+</aside>
+
+
+<!-- WhatsApp chat -->
+<div class="wa" data-wa data-wa-number="919328306142">
+  <div class="wa__card" role="dialog" aria-label="Chat on WhatsApp">
+    <button class="wa__close" type="button" data-wa-close aria-label="Close">&times;</button>
+    <span class="status"><i></i>Typically replies in minutes</span>
+    <h4>Chat with AVENZOTECH</h4>
+    <p>Ask about a build, a rebuild or a quote. You'll reach an engineer, not a bot.</p>
+    <a class="wa__go" href="https://wa.me/919328306142?text=Hi%20AVENZOTECH%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.5-.5z"/><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l5-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+  <button class="wa__btn" type="button" data-wa-toggle aria-label="Open WhatsApp chat" aria-expanded="false">
+    <span class="wa__dot">1</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.3-.5-.5z"/><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l5-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </button>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

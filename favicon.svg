@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="f-body" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#E8564C"/><stop offset="0.45" stop-color="#B02026"/><stop offset="1" stop-color="#5E1012"/>
+    </linearGradient>
+    <linearGradient id="f-spire" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="26" fill="#09090A"/>
+  <g transform="translate(60 61) scale(0.78) translate(-60 -60)">
+    <path d="M60 6 L117 104 L117 113 L89 113 L60 62 L31 113 L3 113 L3 104 Z" fill="url(#f-body)"/>
+    <path d="M60 48 L66 84 L60 79 L54 84 Z" fill="#F2F2F5"/>
+    <path d="M55 72 L47 90 L57 82 Z" fill="#F2F2F5" opacity="0.82"/>
+    <path d="M65 72 L73 90 L63 82 Z" fill="#F2F2F5" opacity="0.82"/>
+    <rect x="59.4" y="14" width="1.2" height="36" fill="url(#f-spire)"/>
+  </g>
+</svg>
