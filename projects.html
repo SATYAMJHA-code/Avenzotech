@@ -8,34 +8,25 @@
 <meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
-<meta name="theme-color" content="#09090a" />
+<meta name="theme-color" content="#ffffff" />
 <link rel="stylesheet" href="styles.css" />
+<script>try{if(!sessionStorage.getItem("avenzo.intro")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("has-intro");sessionStorage.setItem("avenzo.intro","1")}}catch(e){}</script>
 </head>
 <body>
+<div class="intro" aria-hidden="true"><div class="intro__in"><svg class="logo" viewBox="0 0 120 100" aria-hidden="true" focusable="false"><path class="logo__r" d="M58 4 L112 96 L86 96 L47 27 Z"/><path class="logo__l" d="M58 4 L68 21 L30 96 L4 96 Z"/><path class="logo__s" d="M14 77 C 42 52, 78 36, 119 27 C 88 42, 58 58, 34 80 Z"/></svg><div class="intro__word">Avenzo<span>tech</span></div><div class="intro__bar"><i></i></div></div></div>
 <a class="skip" href="#main">Skip to content</a>
-<div class="fx" aria-hidden="true">
-  <div class="fx__orb fx__orb--a"></div>
-  <div class="fx__orb fx__orb--b"></div>
-  <div class="fx__grid"></div>
-  <canvas class="fx__dots"></canvas>
-  <div class="fx__scan"></div>
-</div>
-
-<div class="spine" aria-hidden="true"><div class="spine__fill"></div></div>
-<div class="spine__tag" aria-hidden="true">Projects</div>
-
 <header class="nav">
   <div class="shell nav__in">
-    <a class="brand" href="index.html">
-      <img class="brand__logo" src="logo.svg" alt="" width="120" height="120" />
-      <span class="brand__mark">Avenzo<span>tech</span></span>
+    <a class="brand" href="index.html" aria-label="AVENZOTECH home">
+      <svg class="logo" viewBox="0 0 120 100" aria-hidden="true" focusable="false"><path class="logo__r" d="M58 4 L112 96 L86 96 L47 27 Z"/><path class="logo__l" d="M58 4 L68 21 L30 96 L4 96 Z"/><path class="logo__s" d="M14 77 C 42 52, 78 36, 119 27 C 88 42, 58 58, 34 80 Z"/></svg>
+      <span class="brand__mark" aria-hidden="true">Avenzo<span>tech</span></span>
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html">Home</a>
@@ -55,7 +46,7 @@
   <div class="shell">
     <div class="hero__grid">
       <div>
-        <p class="eyebrow"><b>04</b> — Projects</p>
+        <p class="eyebrow"><b>04</b> Projects</p>
         <h1>The build, the constraint, the <em>outcome</em>.</h1>
         <p class="lede">Every case study below states what the system had to survive — bad connectivity, messy data, non-technical users — because that is what actually shapes an architecture.</p>
       </div>
@@ -208,9 +199,9 @@
   <div class="shell">
     <div class="foot__grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:18px">
-      <img class="brand__logo" src="logo.svg" alt="" width="120" height="120" />
-      <span class="brand__mark">Avenzo<span>tech</span></span>
+        <a class="brand" href="index.html" aria-label="AVENZOTECH home" style="margin-bottom:18px">
+      <svg class="logo" viewBox="0 0 120 100" aria-hidden="true" focusable="false"><path class="logo__r" d="M58 4 L112 96 L86 96 L47 27 Z"/><path class="logo__l" d="M58 4 L68 21 L30 96 L4 96 Z"/><path class="logo__s" d="M14 77 C 42 52, 78 36, 119 27 C 88 42, 58 58, 34 80 Z"/></svg>
+      <span class="brand__mark" aria-hidden="true">Avenzo<span>tech</span></span>
     </a>
         <p style="max-width:38ch">Building secure, scalable and future-ready digital solutions with innovation and precision.</p>
       </div>
@@ -232,7 +223,7 @@
     </div>
     <div class="foot__bar">
       <span>© <span data-year></span> AVENZOTECH. All rights reserved.</span>
-      <span>WCAG 2.2 AA · Privacy-first</span>
+      <span>Ideas to reality</span>
     </div>
   </div>
 </footer>

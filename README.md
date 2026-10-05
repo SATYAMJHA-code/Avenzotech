@@ -1,4 +1,4 @@
-# AVENZOTECH — rebuilt site (v3)
+# AVENZOTECH — rebuilt site (v4)
 
 Five static pages, one stylesheet, one deferred script. No build step, no dependencies, no framework required to deploy.
 
@@ -82,3 +82,14 @@ Full favicon set generated from the same geometry: `favicon.ico` (16/32/48/64), 
 **ERP & CRM added as a fifth service pillar.** Full section on `services.html` — custom modules for inventory, purchase, production and dispatch; CRM with lead scoring and pipeline automation; GST invoicing, e-way bills and Tally sync; Odoo, ERPNext, Zoho and Salesforce implementation and migration. Also on the home services grid, the about capability list, the tech stack column, both contact forms, and the meta descriptions.
 
 **Background animation.** A fixed ambient layer behind all content: two slow-drifting red orbs, a scrolling hairline grid, a scanline sweep, and a canvas particle field that draws connecting lines between nearby points. It pauses when the tab is hidden, throttles on resize, caps at 70 particles, and is disabled entirely under `prefers-reduced-motion`. All GPU-composited transforms, so it doesn't touch your INP — check the vitals panel and you'll see it hold.
+
+
+## v4 changes — light, minimalist rebrand
+
+**Theme.** White / near-black / signal red (`#e3131b`), replacing the dark theme. Type is now Montserrat (display) and Inter (body). Rounded cards, pill buttons, generous white space. The heavy ambient layer (orbs, grid, scanline, particle canvas), the scroll spine and the live-vitals panels are gone.
+
+**New logo.** A red-and-black "A" with a red swoosh, matching the brand poster. `logo.svg`, `logo-mark.png`, `favicon.svg`, `favicon.ico`, all PNG icons and `site.webmanifest` were regenerated from it.
+
+**Logo animation.** The logo is inline SVG in the header and footer, so each part animates: the red leg rises, the black leg drops, the swoosh sweeps across and the wordmark fades in. Hovering the logo replays the swoosh. The home hero shows a large animated mark with the "Ideas to reality" tagline. On the first page view of a session a short (~2s) intro splash builds the logo. All motion switches off under `prefers-reduced-motion`.
+
+**Services.** Four design services were added next to the existing five, giving nine in total: Digital Strategy, UI/UX Design, Brand Identity, Creative Graphics, Web Development, App Development, AI & Smart Systems, Security Solutions, ERP & CRM Systems. They appear on the home page grid, the services page (full detail), the about capability list and both contact forms.

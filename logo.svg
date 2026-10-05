@@ -1,32 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="AVENZOTECH">
-  <defs>
-    <linearGradient id="av-body" x1="0" y1="0" x2="0.35" y2="1">
-      <stop offset="0" stop-color="#E8564C"/>
-      <stop offset="0.45" stop-color="#B02026"/>
-      <stop offset="1" stop-color="#4E0D0F"/>
-    </linearGradient>
-    <linearGradient id="av-edge" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFC9C2" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="#FFC9C2" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="av-spire" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.15"/>
-    </linearGradient>
-    <filter id="av-shadow" x="-25%" y="-25%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#000" flood-opacity="0.55"/>
-    </filter>
-  </defs>
-
-  <g filter="url(#av-shadow)">
-    <!-- chevron -->
-    <path d="M60 6 L117 104 L117 113 L89 113 L60 62 L31 113 L3 113 L3 104 Z" fill="url(#av-body)"/>
-    <!-- inner bevel highlight on the left face -->
-    <path d="M60 12 L11 97 L14 99 L60 20 Z" fill="url(#av-edge)"/>
-    <!-- craft -->
-    <path d="M60 48 L66 84 L60 79 L54 84 Z" fill="#F2F2F5"/>
-    <path d="M55 72 L47 90 L57 82 Z" fill="#F2F2F5" opacity="0.82"/>
-    <path d="M65 72 L73 90 L63 82 Z" fill="#F2F2F5" opacity="0.82"/>
-    <rect x="59.4" y="14" width="1.2" height="36" fill="url(#av-spire)"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100" role="img" aria-label="AVENZOTECH">
+  <path d="M58 4 L112 96 L86 96 L47 27 Z" fill="#111111"/>
+  <path d="M58 4 L68 21 L30 96 L4 96 Z" fill="#E3131B"/>
+  <path d="M14 77 C 42 52, 78 36, 119 27 C 88 42, 58 58, 34 80 Z" fill="#E3131B"/>
 </svg>

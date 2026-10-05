@@ -1,6 +1,6 @@
 /* AVENZOTECH — interactions
-   Modules: nav, reveal, spine, counters, personalization, live vitals,
-            conversational form, consent controls, mail fallback.
+   Modules: nav, reveal, counters, personalization, conversational form,
+            consent controls, mail fallback, WhatsApp chat.
    No dependencies. Deferred, so it never blocks first paint. */
 
 (function () {
@@ -43,30 +43,6 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     revealables.forEach(function (el) { io.observe(el); });
   }
-
-  /* ---------------- index spine ---------------- */
-  var fill = $(".spine__fill"), tag = $(".spine__tag"), marks = $$("[data-section]");
-  function onScroll() {
-    if (fill) {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      fill.style.height = Math.min(100, Math.max(0, max > 0 ? (window.scrollY / max) * 100 : 0)) + "%";
-    }
-    if (tag && marks.length) {
-      var current = marks[0];
-      marks.forEach(function (m) {
-        if (m.getBoundingClientRect().top <= window.innerHeight * 0.42) current = m;
-      });
-      var label = current.getAttribute("data-section");
-      if (tag.textContent !== label) tag.textContent = label;
-    }
-  }
-  var ticking = false;
-  window.addEventListener("scroll", function () {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () { onScroll(); ticking = false; });
-  }, { passive: true });
-  onScroll();
 
   /* ---------------- counters ---------------- */
   var counters = $$("[data-count]");
@@ -157,66 +133,12 @@
     }
   }
 
-  /* ---------------- live Core Web Vitals ----------------
-     Measures this page load in the visitor's own browser: LCP, INP and CLS.
-     Thresholds are the 2026 Core Web Vitals "good" boundaries. */
-
-  var vitalsHost = $("[data-vitals]");
-  if (vitalsHost && "PerformanceObserver" in window) {
-    var LIMITS = { lcp: 2500, inp: 200, cls: 0.1, ttfb: 800 };
-
-    function paint(name, value, unit) {
-      var cell = $('[data-vital="' + name + '"]');
-      if (!cell) return;
-      var out = $("dd", cell);
-      var shown = unit === "ms" ? Math.round(value) + "<small> ms</small>" : value.toFixed(3);
-      out.innerHTML = shown;
-      var ratio = Math.min(1, value / LIMITS[name]);
-      cell.setAttribute("data-state", value <= LIMITS[name] ? "good" : "poor");
-      $(".bar i", cell).style.width = (ratio * 100) + "%";
-      $("em", cell).textContent = (value <= LIMITS[name] ? "Within budget · " : "Over budget · ") +
-        "target " + (unit === "ms" ? LIMITS[name] + "ms" : LIMITS[name]);
-    }
-
-    try {
-      new PerformanceObserver(function (list) {
-        var e = list.getEntries();
-        paint("lcp", e[e.length - 1].startTime, "ms");
-      }).observe({ type: "largest-contentful-paint", buffered: true });
-    } catch (e) {}
-
-    try {
-      var worstInp = 0;
-      new PerformanceObserver(function (list) {
-        list.getEntries().forEach(function (entry) {
-          if (entry.interactionId && entry.duration > worstInp) {
-            worstInp = entry.duration;
-            paint("inp", worstInp, "ms");
-          }
-        });
-      }).observe({ type: "event", buffered: true, durationThreshold: 16 });
-    } catch (e) {}
-
-    try {
-      var cls = 0;
-      new PerformanceObserver(function (list) {
-        list.getEntries().forEach(function (entry) {
-          if (!entry.hadRecentInput) { cls += entry.value; paint("cls", cls, ""); }
-        });
-      }).observe({ type: "layout-shift", buffered: true });
-      paint("cls", 0, "");
-    } catch (e) {}
-
-    var navEntry = performance.getEntriesByType("navigation")[0];
-    if (navEntry) paint("ttfb", navEntry.responseStart, "ms");
-  }
-
   /* ---------------- conversational form ---------------- */
   var convo = $("[data-convo]");
   if (convo) {
     var STEPS = [
       { key: "service", q: "What do you need built?", hint: "Pick the closest fit — we'll refine it together.",
-        type: "choice", options: ["Web platform", "Mobile app", "ERP / CRM", "AI system", "Security work", "Not sure yet"] },
+        type: "choice", options: ["UI/UX design", "Branding & graphics", "Website", "Mobile app", "ERP / CRM", "AI system", "Security work", "Not sure yet"] },
       { key: "stage", q: "Where is the project today?", hint: "This tells us how much discovery you need.",
         type: "choice", options: ["Just an idea", "Have a spec", "Rebuilding something", "Live and struggling"] },
       { key: "timeline", q: "When does it need to be live?", hint: "Honest answers get honest estimates.",
@@ -475,69 +397,6 @@
     }, { passive: true });
   }
 
-  /* ---------------- ambient particle field ---------------- */
-  var canvas = $(".fx__dots");
-  if (canvas && !reduced) {
-    var ctx = canvas.getContext("2d");
-    var dots = [], raf = null, w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    function size() {
-      w = canvas.clientWidth; h = canvas.clientHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var count = Math.min(70, Math.round((w * h) / 26000));
-      dots = [];
-      for (var i = 0; i < count; i++) {
-        dots.push({
-          x: Math.random() * w, y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.16, vy: (Math.random() - 0.5) * 0.16,
-          r: Math.random() * 1.5 + 0.5
-        });
-      }
-    }
-
-    function frame() {
-      ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < dots.length; i++) {
-        var d = dots[i];
-        d.x += d.vx; d.y += d.vy;
-        if (d.x < 0) d.x = w; if (d.x > w) d.x = 0;
-        if (d.y < 0) d.y = h; if (d.y > h) d.y = 0;
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(192,39,43,0.55)";
-        ctx.fill();
-        for (var j = i + 1; j < dots.length; j++) {
-          var e = dots[j], dx = d.x - e.x, dy = d.y - e.y, dist = dx * dx + dy * dy;
-          if (dist < 16000) {
-            ctx.beginPath();
-            ctx.moveTo(d.x, d.y); ctx.lineTo(e.x, e.y);
-            ctx.strokeStyle = "rgba(155,27,30," + (0.16 * (1 - dist / 16000)).toFixed(3) + ")";
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-      raf = requestAnimationFrame(frame);
-    }
-
-    function start() { if (!raf) frame(); }
-    function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
-
-    size();
-    start();
-    var rt;
-    window.addEventListener("resize", function () {
-      clearTimeout(rt); rt = setTimeout(function () { size(); }, 200);
-    });
-    document.addEventListener("visibilitychange", function () {
-      document.hidden ? stop() : start();
-    });
-  }
-
-  /* ---------------- logo fallback + year ---------------- */
-  $$(".brand__logo").forEach(function (img) {
-    img.addEventListener("error", function () { img.style.display = "none"; });
-  });
+  /* ---------------- year ---------------- */
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
