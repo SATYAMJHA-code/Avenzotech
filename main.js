@@ -397,6 +397,50 @@
     }, { passive: true });
   }
 
+  /* ---------------- email links ----------------
+     A bare mailto: does nothing when no mail app is set up. If the page
+     keeps focus after the click, copy the address and offer webmail. */
+  $$("a[data-mail]").forEach(function (link) {
+    var addr = link.getAttribute("href").replace(/^mailto:/, "").split("?")[0];
+    link.addEventListener("click", function () {
+      var left = false;
+      function gone() { left = true; }
+      window.addEventListener("blur", gone);
+      document.addEventListener("visibilitychange", gone);
+      setTimeout(function () {
+        window.removeEventListener("blur", gone);
+        document.removeEventListener("visibilitychange", gone);
+        if (!left) mailToast(addr);
+      }, 1200);
+    });
+  });
+
+  function mailToast(addr) {
+    var old = $(".mailtoast");
+    if (old) old.remove();
+    var copied = false;
+    try {
+      if (navigator.clipboard) { navigator.clipboard.writeText(addr); copied = true; }
+    } catch (e) {}
+    var t = document.createElement("div");
+    t.className = "mailtoast";
+    t.setAttribute("role", "status");
+    t.innerHTML =
+      '<p><b></b><span></span></p>' +
+      '<div class="mailtoast__acts">' +
+      '<a target="_blank" rel="noopener" data-gmail>Gmail</a>' +
+      '<a target="_blank" rel="noopener" data-outlook>Outlook</a>' +
+      '<button type="button" aria-label="Close">&times;</button>' +
+      '</div>';
+    $("b", t).textContent = addr;
+    $("span", t).textContent = copied ? "Address copied — paste it into your email." : "No mail app found — write to us here:";
+    $("[data-gmail]", t).href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(addr);
+    $("[data-outlook]", t).href = "https://outlook.live.com/mail/0/deeplink/compose?to=" + encodeURIComponent(addr);
+    $("button", t).addEventListener("click", function () { t.remove(); });
+    document.body.appendChild(t);
+    setTimeout(function () { if (t.parentNode) t.remove(); }, 10000);
+  }
+
   /* ---------------- year ---------------- */
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();

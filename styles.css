@@ -654,3 +654,13 @@ section { position: relative; }
   .marquee__track { animation: none; }
   .has-intro .intro { display: none; }
 }
+
+/* ---------- mail fallback toast ---------- */
+.mailtoast { position: fixed; top: 84px; right: 20px; z-index: 90; width: min(340px, calc(100vw - 32px)); background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 22px 50px rgba(17, 17, 19, 0.16); padding: 16px 18px; font-size: 0.88rem; color: var(--ash); }
+.mailtoast p { margin: 0 0 12px; display: grid; gap: 4px; }
+.mailtoast b { color: var(--ink); font-size: 0.95rem; word-break: break-all; }
+.mailtoast__acts { display: flex; gap: 8px; align-items: center; }
+.mailtoast__acts a { padding: 8px 14px; border-radius: 999px; background: var(--red); color: #fff; font-weight: 600; font-size: 0.82rem; }
+.mailtoast__acts a:hover { background: var(--red-dark); }
+.mailtoast__acts button { margin-left: auto; background: none; border: 0; font-size: 1.3rem; line-height: 1; color: var(--ash); cursor: pointer; padding: 4px 8px; }
+@media (max-width: 480px) { .mailtoast { right: 16px; } }
